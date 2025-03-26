@@ -2,60 +2,45 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <!-- 문자 인코딩 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 반응형 디자인을 위한 뷰포트 설정 -->
-    <title>달력</title>
-    <!-- 페이지 제목 -->
+    <title>내 일정 관리 달력</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- CSS 파일 연결 -->
   </head>
   <body>
+    <h1 class="calendar-title">📅 내 일정 관리 달력</h1>
+    <!-- 제목 추가 -->
+
     <!-- 달력 컨테이너 -->
     <div class="calendar">
       <div class="calendar-header">
-        <!-- 이전 달로 이동 버튼 -->
         <button onclick="prevMonth()">◀</button>
         <h2 id="month-year"></h2>
-        <!-- 현재 연도와 월을 표시 -->
-        <!-- 다음 달로 이동 버튼 -->
         <button onclick="nextMonth()">▶</button>
       </div>
       <div class="days" id="days"></div>
-      <!-- 날짜들 (일정 표시 영역) -->
+      <!-- 날짜 영역 -->
     </div>
 
-    <!-- 일정 목록 (기본으로 비어 있음) -->
-    <div id="event-list" class="event-list">
-      <h3>일정 목록</h3>
-      <ul id="event-list-content"></ul>
-    </div>
-
-    <!-- 일정 추가를 위한 모달 -->
+    <!-- 일정 추가 모달 -->
     <div id="event-modal" class="modal">
       <div class="modal-content">
         <h3>일정 추가</h3>
-        <!-- 일정 제목 입력 필드 -->
         <input
           type="text"
           id="event-title"
           placeholder="일정 제목을 입력하세요"
           required
         />
-        <!-- 카테고리 선택 (업무, 개인, 미팅) -->
         <select id="category-select">
           <option value="work">업무</option>
           <option value="personal">개인</option>
           <option value="meeting">미팅</option>
         </select>
-        <!-- 저장 버튼 -->
         <button onclick="saveEvent()">저장</button>
-        <!-- 모달 닫기 버튼 -->
         <button onclick="closeModal()">닫기</button>
       </div>
     </div>
 
-    <!-- JavaScript 파일 연결 -->
     <script src="script.js"></script>
   </body>
 </html>
